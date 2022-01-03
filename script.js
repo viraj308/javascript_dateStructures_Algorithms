@@ -209,7 +209,96 @@ one.yourBalance();
 one.withdraw(2000);
 one.yourBalance();
 
+// Arrays
 
+// A Javasript array is an object, with the indices being property names that are integers.
+// hence there are set of set of properties and functions you can use with an array.
+
+// The simpliest way to create array is by declaring an array variable.
+
+var animals = []; // Array with the length of 0
+console.log(animals.length); // displays 0
+
+var items = ["tin", "boxes"]; // Array with the length of 2
+console.log(items.length); // displays 2
+ 
+// You can also create an array using an array constructor
+
+var birds = new Array();
+console.log(birds.length); // shows 0
+
+var names = new Array("viraj", "vikrant", "kiran");
+console.log(names.length); // shows 3
+
+// finally you can create an array by calling the array constructor with the single argument specifying the length of the array.
+var countries = new Array(10);
+console.log(countries.length); // shows 10
+console.log(countries); // 10 empty items
+
+// Javascript array elements do not all have to be of the same type.
+var elements = ["viraj", 10, null, undefined];
+console.log(elements.length);
+
+// you can also verify that an object is an array by using Array.isArray() function.
+
+var color = "yellow";
+var brands = ["nike", "puma"];
+console.log(Array.isArray(color)); // displays false
+console.log(Array.isArray(brands)); // displays true
+
+
+// Accessing Array elements
+
+var numbers = [];
+for (var i = 0; i < 5; i++) {
+    numbers[i] = i; // You can access the array using it's index number
+}
+console.log(numbers); 
+
+// Accessing all the elements of an array sequientially is much eaiser using a for loop
+
+var names = [1, 2, 3, 4, 5];
+var answer = 0;
+for (var i = 0; i < names.length; i++) {
+    answer += names[i];
+}
+console.log(answer);
+
+
+// Creating Arrays form the strings
+// Arrays can be creating from a string using a split() function.
+
+var sentence = "He farted so loud that ..."
+var words = sentence.split(" ");
+for (var i = 0; i < words.length; i++) {
+    console.log(`Words : ${words[i]}`);  
+}
+
+// Aggregating Array
+
+var cloths = ["shirts", "pants"];
+var myCloths = cloths;
+console.log(myCloths); // This creates a shallow copy, any change in original array would reflect in the copied one.
+
+// This is how you can create a deep copy. you create a function for that...
+
+var cars = ["mercedes", "ferrari"];
+var myCars = [];
+function copy(array1, array2) {
+    for (var i = 0; i < array1.length; i++) {
+        array2[i] = array1[i];
+    }
+}
+copy(cars, myCars);
+console.log(myCars);
+
+// Accessor functions : Javascript provides a set of functions to access the elements of the array.
+
+var seasons = ["summer", "winter"];
+var answer = seasons.indexOf("summer"); // If the element exists, it returns the index of the element.
+console.log(answer);
+var answer2 = seasons.indexOf("rainy");
+console.log(answer2); // It the elements doesn't exist, it returns -1
 
 
 
