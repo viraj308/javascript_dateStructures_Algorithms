@@ -114,6 +114,53 @@ console.log(factorial(3));
 
 function sum (x, y) {
     addition = x + y;
-    console.log("sum: " + addition);
+    console.log(`sum: ${addition}`); // A template string
 }
 sum(4, 2);
+
+// Scope of the variables
+
+// 1. Global Scope
+
+var scope = "global";
+function showScope() {
+    return scope;
+}
+console.log(showScope()); 
+/* the function can access the scope variable because it was declared outside the function,
+which makes it a global variable*/
+// Global variables can be declared anywhere in the program, you can declare the scope variable after the function or before the function.
+
+// 2. Local Scope
+
+var scope = "global";
+function showScope() {
+    var scope = "local";
+    return scope;
+}
+console.log(showScope());
+console.log(scope);
+
+/* the variale defined in the function has a local scope while the variable defined in the 
+main progarm has a global scope. Javascript allows you to define variables without the var
+keyword, but defining a variable without a var keyword automatically makes it a global var
+even if it's inside a function*/
+
+/* Javascript doesn't have the block scope for variable,block of scope means when a variable is declared within a 
+block of code, it isn't available outside the block.
+*/
+
+// Recursion
+
+function factorial(number) {
+    if (number === 1) {
+        return number;
+    }
+    else {
+        number = number * factorial(number - 1);
+        return number;
+    }
+}
+console.log(factorial(5));
+
+
