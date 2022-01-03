@@ -164,3 +164,53 @@ function factorial(number) {
 console.log(factorial(5));
 
 
+/* Most of the data structures in javascript are implemented as objects.
+Javascript provides many ways for creating and using objects.
+Here objects are created by using a constructor function the includes the delcaration of 
+the objects properties and functions.
+*/
+
+// Here is a constructor function
+
+
+function Checking(amount) {
+    this.balance = amount; // property
+    this.deposit = deposit; // function
+    this.withdraw = withdraw; // function
+    this.yourBalance = yourBalance; // function
+}
+function deposit(amount) {
+    this.balance += amount;
+    console.log(amount + " was successfully deposited.");
+}
+function withdraw(amount) {
+    if (amount > this.balance) {
+        console.log("Insufficient funds");
+    }
+    else {
+        this.balance -= amount;
+        console.log(amount + " was successfully withdrawn.");
+    }
+
+}
+function yourBalance() {
+    console.log("Your Balance is: " + this.balance);
+}
+
+
+var one = new Checking(200);
+console.log(one.balance);
+one.deposit(500);
+one.yourBalance(); 
+one.withdraw(500);
+one.yourBalance();
+one.deposit(1000);
+one.yourBalance();
+one.withdraw(2000);
+one.yourBalance();
+
+
+
+
+
+
