@@ -300,6 +300,86 @@ console.log(answer);
 var answer2 = seasons.indexOf("rainy");
 console.log(answer2); // It the elements doesn't exist, it returns -1
 
+/* If you have multiple occurences of the same data in an array, the indexOf() will always return the 
+index of the first occurence whereas lastIndexOf() will return the position of the last occurence, of if
+the argument isn't found it returns -1.
+*/
 
+// String representation of Arrays
 
+/* There are two functions that return string representations of any array. join() and toString().
+both functions return a string containing the elements of array separated by commas.
+*/
+
+var phones = ["samsung", "iPhone", "redmi"];
+var three = phones.join();
+console.log(three);
+console.log(three.toString()); // both return a string containing the elements.
+
+// Creating new arrays from existing arrays
+
+/* There are two accessors functions that allow you create new arrays from existing arrays
+
+1. splice() : create an array from a subset of an array.
+2. concat() : could put together two or more arrays to create an array.
+*/
+
+var flowers = ["rose", "sunflower", "daisy"];
+var flowers2 = ["lily", "mariegold", "tulip"];
+var final = flowers.concat(flowers2);// the argument is concantenated at the end of the calling array.
+console.log(final);
+
+var movies = ["harry potter", "dexter", "spiderman", "batman"];
+var myfav = movies.splice(1, 3); // first argument is the starting position and the second is the no. of elements you want to splice.
+console.log(myfav);
+
+/* Adding elements to any array
+ There are two functions for adding elements to any array.
+
+1. unshift() : 
+2. push() : adds element at the end of the array. 
+*/
+
+var items3 = ["pan", "table"];
+items3.push("rod"); // adds elements at the end of the array
+console.log(items3);
+
+// using length property to extend an array
+items3[items3.length] = "chair";
+console.log(items3);
+
+// We use unshift() function to add an element at the beginnning of an array.
+
+items3.unshift("rock");
+console.log(items3); // rock was added at the beginning of any array.
+
+// Removing elements from an array.
+
+var item = items3.pop(); // It removes the last element for any array and stores it in a variable.
+console.log(items3);
+console.log(item);
+
+items3.shift(); // rock was removed from the beginning of an array.
+console.log(items3); 
+// both the functions could return the removed element.
+
+// ADDING AND REMOVING ELEMENTS FROM THE MIDDLE OF THE ARRAY
+
+// by using splice(), we could add and remove elements simultaneously.
+
+var bikes = ["harley", "yamaha", "ducati"];
+var newBikes = ["hero", "honda"];
+bikes.splice(1, 0, newBikes); // adding an array from the index no 1
+console.log(bikes);
+console.log(bikes.join());
+bikes.splice(0, 3); // Removing 3 elements for the array
+console.log(bikes);
+
+// Putting Array Elements in Order
+
+var numbers = [1, 2, 356, 4, 50];
+numbers.reverse(); // reverses the order.
+console.log(numbers);
+numbers.sort(); // sorts the elements in order. remember sort() function does not work well with numbers.
+console.log(numbers);
 
